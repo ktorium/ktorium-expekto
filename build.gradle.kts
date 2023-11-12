@@ -3,6 +3,12 @@ import org.gradle.api.tasks.wrapper.Wrapper.DistributionType.ALL
 allprojects {
     group = "com.ktorium.expekto"
     version = "1.0-SNAPSHOT"
+
+    configurations.all {
+        resolutionStrategy {
+            failOnNonReproducibleResolution()
+        }
+    }
 }
 
 tasks {

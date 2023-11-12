@@ -12,12 +12,16 @@ kotlin {
     explicitApi()
 
     jvm()
+    js(IR) {
+        browser()
+        nodejs()
+    }
 
     sourceSets {
         all {
             languageSettings.apply {
-                apiVersion = "1.9"
-                languageVersion = "1.9"
+                apiVersion = "2.0"
+                languageVersion = "2.0"
                 progressiveMode = true
             }
         }
