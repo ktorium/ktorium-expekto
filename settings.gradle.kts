@@ -1,14 +1,13 @@
 pluginManagement {
     plugins {
-        kotlin("multiplatform") version "1.9.10" apply false
+        kotlin("multiplatform") version "1.9.20" apply false
     }
     repositories {
         gradlePluginPortal()
         mavenCentral()
     }
+    includeBuild("gradle/plugins")
 }
-
-rootProject.name = "expekto"
 
 dependencyResolutionManagement {
     repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
@@ -18,9 +17,21 @@ dependencyResolutionManagement {
     }
 }
 
-includeModule("core")
+plugins {
+    id("settings-plugins")
+}
 
-fun includeModule(name: String) {
-    include(name)
-    project(":${name}").projectDir = File("modules/$name")
+run {
+    rootProject.name = "expekto"
+}
+
+listOf(
+    "core"
+).forEach {
+    includeModule("modules", it)
+}
+
+fun includeModule(moduleName: String, projectName: String) {
+    include(projectName)
+    project(":$projectName").projectDir = file("$moduleName/$projectName")
 }
