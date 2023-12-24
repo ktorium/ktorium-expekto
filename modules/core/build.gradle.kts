@@ -2,20 +2,10 @@ plugins {
     kotlin("multiplatform")
 }
 
-configurations.all {
-    resolutionStrategy {
-        failOnNonReproducibleResolution()
-    }
-}
-
 kotlin {
     explicitApi()
 
     jvm()
-    js(IR) {
-        browser()
-        nodejs()
-    }
 
     sourceSets {
         all {
