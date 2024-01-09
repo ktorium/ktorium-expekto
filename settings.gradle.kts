@@ -3,11 +3,13 @@
 pluginManagement {
     plugins {
         kotlin("multiplatform") version "1.9.22" apply false
+        id("io.gitlab.arturbosch.detekt") version "1.23.4" apply false
     }
     repositories {
         gradlePluginPortal()
         mavenCentral()
     }
+    includeBuild("build-logic")
 }
 
 dependencyResolutionManagement {
@@ -18,9 +20,7 @@ dependencyResolutionManagement {
     }
 }
 
-run {
-    rootProject.name = "expekto"
-}
+rootProject.name = "expekto"
 
 includeModule("core")
 

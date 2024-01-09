@@ -13,7 +13,7 @@
 
 Expekto is an assertion library for Kotlin Multiplatform.
 
-## Requirements
+## Compatibility
 
 - Java 11 or later.
 - Kotlin 1.9 or later.
