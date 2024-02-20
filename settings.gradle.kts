@@ -1,30 +1,30 @@
 @file:Suppress("UnstableApiUsage")
 
+import org.ktorium.kotlin.gradle.api.includeModule
+
 pluginManagement {
-    plugins {
-        kotlin("multiplatform") version "1.9.22" apply false
-        id("io.gitlab.arturbosch.detekt") version "1.23.4" apply false
-    }
-    repositories {
-        gradlePluginPortal()
-        mavenCentral()
-    }
     includeBuild("build-logic")
 }
 
 dependencyResolutionManagement {
-    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    repositoriesMode = RepositoriesMode.PREFER_PROJECT
 
     repositories {
         mavenCentral()
     }
 }
 
-rootProject.name = "expekto"
+plugins {
+    kotlin("multiplatform") version "1.9.20" apply false
+    id("io.gitlab.arturbosch.detekt") version "1.23.4" apply false
+    id("org.jetbrains.dokka") version "1.9.10" apply false
+    id("org.jetbrains.kotlinx.kover") version "0.7.5" apply false
+    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2" apply false
+    id("build-settings-plugin")
+}
+
+gradle.beforeSettings {
+    rootProject.name = "expekto"
+}
 
 includeModule("core")
-
-fun includeModule(name: String) {
-    include(name)
-    project(":${name}").projectDir = File("modules/$name")
-}

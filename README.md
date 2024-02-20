@@ -2,7 +2,7 @@
 
 <p style="text-align: center;">
     <a href="https://kotlinlang.org">
-        <img alt="Kotlin Version" src="https://img.shields.io/badge/kotlin-1.9.22-blue.svg?logo=kotlin">
+        <img alt="Kotlin Version" src="https://img.shields.io/badge/kotlin-1.9.20-blue.svg?logo=kotlin">
     </a>
     <a href="https://github.com/ktorium/expekto/blob/main/LICENSE">
         <img alt="License" src="https://img.shields.io/github/license/ktorium/expekto" />
@@ -12,6 +12,12 @@
 ## Overview
 
 Expekto is an assertion library for Kotlin Multiplatform.
+
+> [!WARNING]
+> ktorium-expekto is under development.
+>
+> Report any issue or bug <a href="/issues">in the GitHub repository.</a>
+> 
 
 ## Compatibility
 

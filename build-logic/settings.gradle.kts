@@ -16,4 +16,11 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "build-logic"
+gradle.beforeSettings {
+    rootProject.name = "build-logic"
+}
+
+include("build-project-plugin")
+include("build-settings-plugin")
+include("build-publication-plugin")
+include("build-wrapper-plugin")
